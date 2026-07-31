@@ -37,6 +37,15 @@ const projectData = [
     buttons: [
       { text: 'GitHub', url: 'https://github.com/Yuvarajsel', type: 'primary' }
     ]
+  },
+  {
+    title: 'Foodie — Food Delivery Web App',
+    desc: 'Modern, interactive food ordering and delivery web application built with Vanilla JavaScript, custom CSS3 design tokens, and Swiper.js. Features dynamic JSON catalog rendering, a real-time slide-out shopping cart drawer with live price calculation, item quantity management, and a responsive mobile navigation drawer.',
+    features: ['Dynamic JSON Catalog', 'Interactive Cart Drawer', 'Real-time Price & Counter Calculation', 'Swiper.js Reviews Carousel', 'Sticky Navigation', 'Responsive Mobile Layout'],
+    buttons: [
+      { text: 'GitHub', url: 'https://github.com/Yuvarajsel/Food_Delivery_Website', type: 'primary' },
+      { text: 'Live Demo', url: 'https://food-delivery-website-lovat.vercel.app/', type: 'secondary' }
+    ]
   }
 ];
 
@@ -316,7 +325,7 @@ function initTechFilter() {
   function filterCards(filter) {
     cards.forEach(card => {
       if (card.dataset.category === filter) {
-        card.style.display = '';
+        card.style.display = 'flex';
         card.style.animation = 'fadeInUp 0.4s ease forwards';
       } else {
         card.style.display = 'none';
@@ -432,23 +441,47 @@ function initContactForm() {
     setTimeout(() => ripple.remove(), 600);
   });
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const originalHTML = submitBtn.innerHTML;
     submitBtn.innerHTML = `
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      Message Sent!
+      <svg class="btn-spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+      Sending...
     `;
-    submitBtn.style.background = 'linear-gradient(135deg, #11998e, #38ef7d)';
     submitBtn.disabled = true;
 
-    setTimeout(() => {
-      submitBtn.innerHTML = originalHTML;
-      submitBtn.style.background = '';
-      submitBtn.disabled = false;
-      form.reset();
-    }, 3000);
+    try {
+      const formData = new FormData(form);
+      const response = await fetch('https://formsubmit.co/ajax/yuvarajselvam2006@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      });
+
+      if (response.ok) {
+        submitBtn.innerHTML = `
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Message Sent Directly to Email!
+        `;
+        submitBtn.style.background = 'linear-gradient(135deg, #11998e, #38ef7d)';
+        form.reset();
+      } else {
+        throw new Error('Server response failed');
+      }
+    } catch (err) {
+      console.warn('FormSubmit AJAX fallback:', err);
+      // Fallback submit
+      form.submit();
+    } finally {
+      setTimeout(() => {
+        submitBtn.innerHTML = originalHTML;
+        submitBtn.style.background = '';
+        submitBtn.disabled = false;
+      }, 4000);
+    }
   });
 }
 

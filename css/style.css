@@ -335,17 +335,34 @@ input, textarea { font-family: inherit; }
 }
 
 .nav-logo {
-  font-family: var(--font-mono);
-  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.03em;
 }
 
-.nav-logo span {
+.nav-logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.4));
+  transition: transform var(--transition-spring), filter var(--transition-base);
+}
+
+.nav-logo:hover .nav-logo-img {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 18px rgba(0, 212, 255, 0.8));
+}
+
+.nav-logo-text {
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-weight: 800;
 }
 
 .nav-links {
@@ -712,15 +729,22 @@ input, textarea { font-family: inherit; }
 }
 
 .tech-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .tech-card {
+  width: 140px;
+  min-height: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
   padding: 1.5rem 1rem;
   text-align: center;
@@ -1460,10 +1484,37 @@ textarea.form-input {
   box-shadow: 0 6px 25px rgba(0, 212, 255, 0.45);
 }
 
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.4));
+  transition: transform var(--transition-spring), filter var(--transition-base);
+}
+
+.footer-logo:hover .footer-logo-img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.8));
+}
+
 /* ---------- Animations ---------- */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.btn-spinner {
+  animation: spin 1s linear infinite;
 }
 
 @keyframes fadeIn {
@@ -1566,7 +1617,7 @@ textarea.form-input {
 @media (max-width: 480px) {
   .about-stats { grid-template-columns: 1fr; }
   .achievements-grid { grid-template-columns: 1fr; }
-  .tech-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+  .tech-card { width: 110px; min-height: 100px; padding: 1rem 0.5rem; }
   .hero-cta { flex-direction: column; }
   .hero-cta .btn { width: 100%; justify-content: center; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
