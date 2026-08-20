@@ -5,29 +5,37 @@
 // ============ Project Data ============
 const projectData = [
   {
-    title: 'CropCopilot',
-    desc: 'AI-powered agricultural intelligence platform that combines RAG (Retrieval-Augmented Generation) with Text-to-SQL capabilities. Built with NVIDIA NIM APIs and CrewAI for multi-agent orchestration, delivering real-time crop recommendations through an interactive dashboard.',
-    features: ['RAG Pipeline', 'Text-to-SQL', 'FastAPI Backend', 'Real-time Recommendations', 'Interactive Dashboard', 'NVIDIA NIM APIs'],
-    buttons: [
-      { text: 'GitHub', url: 'https://github.com/Yuvarajsel/CropCopilot', type: 'primary' }
-    ]
-  },
-  {
     title: 'Voice-Based AI Study Assistant',
-    desc: 'An intelligent study companion that leverages speech recognition and AI to create personalized learning experiences. Features include voice-driven quiz generation, real-time speech interaction, and adaptive study recommendations.',
-    features: ['Speech Recognition', 'Quiz Generator', 'Voice Interaction', 'AI Study Assistant', 'Natural Language Processing', 'Adaptive Learning'],
+    desc: 'Developed a voice-enabled AI study assistant capable of analyzing spoken input and extracting study topics automatically. Implemented interactive quiz and assessment features to improve learning engagement and enabled real-time audio communication using speech processing techniques.',
+    features: ['Speech Processing', 'Real-Time Audio', 'Topic Extraction', 'Quiz Generator', 'Adaptive Learning', 'AI Study Companion'],
     buttons: [
       { text: 'GitHub', url: 'https://github.com/Yuvarajsel/Voice_Based_Study_Assistant', type: 'primary' },
       { text: 'Live Demo', url: 'https://study-buddy-bice-alpha.vercel.app/', type: 'secondary' }
     ]
   },
   {
-    title: 'Visual Search Engine for Jewelry',
-    desc: 'A multimodal RAG-powered search engine enabling image-based and sketch-based jewelry discovery. Uses vector search for similarity matching and LLMs for generating rich product descriptions from visual inputs.',
-    features: ['Multimodal RAG', 'Image Search', 'Sketch Search', 'LLM Product Descriptions', 'Vector Search', 'Similarity Matching'],
+    title: 'Visual Search Engine for Jewelry using Multimodal RAG',
+    desc: 'Built a Retrieval-Augmented Generation pipeline integrating LLM APIs to generate product descriptions from retrieved jewelry data. Designed vector similarity search across image, sketch, and text inputs for accurate multimodal retrieval and structured prompts to produce consistent product descriptions.',
+    features: ['Multimodal RAG', 'Image & Sketch Search', 'Vector Similarity Search', 'LLM Product Descriptions', 'Structured Prompting', 'CLIP Embeddings'],
     buttons: [
       { text: 'GitHub', url: 'https://github.com/Yuvarajsel/Multimodal_Jewelry_Retrieval', type: 'primary' },
       { text: 'Live Demo', url: 'https://jewellerytanishq-clip.vercel.app/', type: 'secondary' }
+    ]
+  },
+  {
+    title: 'PlacementPal 🎓🤖 — AI-Powered Placement Prep Platform',
+    desc: 'An AI-powered placement preparation platform designed to help students crack technical interviews at top-tier software companies. Combines a React/Vite frontend with a Python 3.12 FastAPI backend, using stateful 2-phase LangGraph execution pipelines, 5 specialized CrewAI autonomous agents, ChromaDB vector database RAG for PDF/document ingestion, async MongoDB persistence, and Tavily Search API for real-time company hiring intelligence.',
+    features: ['LangGraph 2-Phase Stateful Pipeline', '5 Specialized CrewAI Agents', 'ChromaDB RAG Vector Vault', 'FastAPI & Async MongoDB', 'Tavily Real-Time Web Search', 'React 18 & Vite Frontend', 'Active Recall & Spaced Repetition', 'Day-by-Day Study Architect'],
+    buttons: [
+      { text: 'GitHub', url: 'https://github.com/Yuvarajsel', type: 'primary' }
+    ]
+  },
+  {
+    title: 'CropCopilot – AI-Powered Agricultural Intelligence System',
+    desc: 'Integrated NVIDIA NIM LLM APIs with CrewAI agents to combine RAG-based knowledge retrieval with Text-to-SQL querying. Built and deployed a FastAPI backend serving real-time AI-generated insights, including error handling for API/model edge cases and rapidly prototyping structured and unstructured queries.',
+    features: ['RAG Pipeline', 'Text-to-SQL', 'FastAPI Backend', 'NVIDIA NIM LLMs', 'CrewAI Agents', 'Structured & Unstructured Queries'],
+    buttons: [
+      { text: 'GitHub', url: 'https://github.com/Yuvarajsel/CropCopilot', type: 'primary' }
     ]
   },
   {
