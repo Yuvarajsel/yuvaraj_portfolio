@@ -8,7 +8,7 @@ Welcome to my personal portfolio repository, showcasing my journey, projects, an
 
 ## 📖 About Me
 
-I am a B.Tech Artificial Intelligence and Data Science student at Bannari Amman Institute of Technology (2023 – 2027 | CGPA: 6.52). Motivated student with hands-on experience building and deploying AI-driven applications using LLM APIs, RAG pipelines, and prompt engineering. Proficient in Python, with practical exposure to vector databases, REST API integration, and multi-agent development (LangGraph, CrewAI).
+I am a B.Tech Artificial Intelligence and Data Science student at Bannari Amman Institute of Technology (2023 – 2027 | CGPA: 6.52/10) with hands-on experience in Generative AI, LLM, RAG, and Agentic AI development using Python. Skilled in multi-agent workflows, semantic search, multimodal retrieval, and Text-to-SQL systems, with proficiency in LangChain, LangGraph, CrewAI, FastAPI, ChromaDB, and MongoDB. Strong grasp of prompt engineering, NLP, vector embeddings, and API integration. Seeking roles as an AI Engineer, Generative AI Engineer, or Machine Learning Engineer.
 
 ---
 
